@@ -1,0 +1,222 @@
+/* style.css
+ * This file provides css styles.
+ */
+body, html {
+	background-color: #3b4b54;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+		"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	/* color: #ffffff; */
+	/* min-height: 2000px; */
+	padding-top: 35px;
+}
+
+.jumbotron {
+	padding-right: 30px;
+	padding-left: 30px;
+}
+
+#output {
+	font-size: 18px;
+}
+
+.wait-svg {
+    width: 240px !important;
+    height: 240px !important;
+}
+
+.disable-click-events {
+    pointer-events: none;
+}
+
+/* POS Tagging CSS */
+
+.label {
+	color: black;
+	margin: 0px;
+	padding: 0px;
+	padding-right: 5px;
+}
+
+.span {
+	display: inline-block;
+    padding-right: 10px;
+}
+
+span.label:after {
+	content: "/"
+}
+
+.PUNC {
+	color: slateblue;
+}
+
+.-LRB- {
+	color: slateblue;
+}
+
+.-RRB- {
+	color: slateblue;
+}
+
+.-RSB- {
+	color: slateblue;
+}
+
+.-LSB- {
+	color: slateblue;
+}
+
+.-LCB- {
+	color: slateblue;
+}
+
+.-RCB- {
+	color: slateblue;
+}
+
+.CC {
+	color: indianred;
+}
+
+.CD {
+	color: greenyellow;
+}
+
+.DT {
+	color: chocolate;
+}
+
+.EX {
+	color: tomato;
+}
+
+.FW {
+	color: darkgreen;
+}
+
+.IN {
+	color: tomato;
+}
+
+.JJ {
+	color: darkgreen;
+}
+
+.JJR {
+	color: forestgreen;
+}
+
+.JJS {
+	color: green;
+}
+
+.LS {
+	color: tomato;
+}
+
+.MD {
+	color: olive;
+}
+
+.NN {
+	color: blue;
+}
+
+.NNS {
+	color: navy;
+}
+
+.NNP {
+	color: darkblue;
+}
+
+.NNPS {
+	color: darkcyan;
+}
+
+.PDT {
+	color: skyblue;
+}
+
+.POS {
+	color: steelblue;
+}
+
+.PRP {
+	color: darkorchid;
+}
+
+.PP $ {
+	color: darkviolet;
+}
+
+.RB {
+	color: darkorange;
+}
+
+.RBR {
+	color: orangered;
+}
+
+.RBS {
+	color: orangered;
+}
+
+.RP {
+	color: orange;
+}
+
+.SYM {
+	color: chocolate;
+}
+
+.TO {
+	color: tomato;
+}
+
+.UH {
+	color: tomato;
+}
+
+.VB {
+	color: red;
+}
+
+.VBD {
+	color: darkred;
+}
+
+.VBG {
+	color: maroon;
+}
+
+.VBN {
+	color: firebrick;
+}
+
+.VBP {
+	color: crimson;
+}
+
+.VBZ {
+	color: maroon;
+}
+
+.WDT {
+	color: purple;
+}
+
+.WP {
+	color: purple;
+}
+
+.WP $ {
+	color: mediumvioletred;
+}
+
+.WRB {
+	color: mediumvioletred;
+}
