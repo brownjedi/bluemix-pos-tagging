@@ -21,16 +21,21 @@ import opennlp.tools.tokenize.WhitespaceTokenizer;
 @Path("/pos")
 public class PosResource {
 
+	private POSModel model;
+	private POSTaggerME tagger;
+	
+	public PosResource() {
+		 model = new POSModelLoader().load(new File(getClass().getResource("../resources/en-pos-maxent.bin").getFile()));
+		 tagger = new POSTaggerME(model);
+	}
+	
 	@SuppressWarnings("unchecked")
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	public JSONArray getPosTagging(@FormParam("sentence") String sentence) {
+	public JSONArray getPosTagging(@FormParam("data") String data) {
 		
-		POSModel model = new POSModelLoader().load(new File(getClass().getResource("../resources/en-pos-maxent.bin").getFile()));
-		POSTaggerME tagger = new POSTaggerME(model);
-
-        String tokens[] = WhitespaceTokenizer.INSTANCE.tokenize(sentence);
+        String tokens[] = WhitespaceTokenizer.INSTANCE.tokenize(data);
         String[] tags = tagger.tag(tokens);
         POSSample sample = new POSSample(tokens, tags);
         String posTokens[] = sample.getSentence();

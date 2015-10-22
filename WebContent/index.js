@@ -1,8 +1,8 @@
 function generatePOS() {
-	var sentence = $('#comment').val();
+	var data = $('#comment').val();
 
-	if(sentence) {
-		var request = $.post('api/pos', {"sentence": sentence});
+	if(data) {
+		var request = $.post('api/pos', {"data": data});
 		$.blockUI({
 			message: '<div class="disable-click-events">' +
 			'<embed type="image/svg+xml" src="images/loading-indicator.svg" class="wait-svg disable-click-events">' +
