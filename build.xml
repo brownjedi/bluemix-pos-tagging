@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project basedir="." default="build" name="Java Hello World Web Starter">
+<project basedir="." default="build" name="Parts of Speech Tagging">
     <property environment="env"/>
     <property name="srcDir" value="."/>
     <property name="debuglevel" value="source,lines,vars"/>
@@ -9,7 +9,7 @@
     <condition property="ARCHIVE_DIR" value="${env.ARCHIVE_DIR}" else=".">
         <isset property="env.ARCHIVE_DIR" />
     </condition>
-	<property name="warname" value= "JavaHelloWorldApp.war"/>
+	<property name="warname" value= "POSTaggingApp.war"/>
     <path id="classpathDir">
         <pathelement location="bin"/>
     	<!-- Added dep-jar and WebContent to Classpath -->
@@ -18,14 +18,14 @@
 	    </fileset>
 	  	<fileset dir="WebContent">
 	  		<include name="**/*"/>
-	    </fileset>	  		
+	    </fileset>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
     </target>
     <target name="clean">
         <delete dir="bin"/>
-		<delete file="${ARCHIVE_DIR}/${warname}" />		
+		<delete file="${ARCHIVE_DIR}/${warname}" />
     </target>
     <target name="build" depends="build-project,build-war"/>
     <target name="cleanall" depends="clean"/>
@@ -33,12 +33,12 @@
     	<copy todir="${ARCHIVE_DIR}">
 	      <fileset file="manifest.yml" />
 	    </copy>
-    	
+
     	<!-- Copying the resources -->
     	<copy todir="bin">
     		<fileset dir="src" excludes="**/*.java" />
 	    </copy>
-    	
+
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}"
 		includeantruntime="false">
@@ -46,7 +46,7 @@
             <classpath refid="classpathDir"/>
         </javac>
     </target>
- 
+
    <target name="build-war" depends="build-project">
 	  <war destfile="${ARCHIVE_DIR}/${warname}" webxml="WebContent/WEB-INF/web.xml">
 	  	<webinf dir="WebContent/WEB-INF">
